@@ -1,11 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'typeface-roboto';
+import logo from './logo.ico';
 import './App.css';
+import { createMuiTheme, ThemeProvider, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
 
 function App() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -18,7 +24,8 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+
     </div>
   );
 }
