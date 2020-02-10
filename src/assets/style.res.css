@@ -1,0 +1,33 @@
+.ContainerFull{
+    width: 98%;
+    padding-right: 1%;
+    padding-left: 1%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.LeftMenu{
+    margin-top: 16px;
+    width: 30.333%;
+    display: inline-block;
+    padding: 15px;
+}
+.Content {
+    margin-top: 16px;
+    width: 69.333%;
+    display: inline-block;
+    padding: 15px;
+}
+.row {
+    flex-wrap: nowrap!important;
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+@media only screen and (max-width: 600px) {
+   .LeftMenu{
+       width: 100%;
+   }
+   .Content{
+       width: 100%;
+   }
+  }
