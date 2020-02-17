@@ -28,5 +28,7 @@ body{
 .App-link {
   color: #61dafb;
 }
-
+.rightSpacing{
+  margin-right: 15px;
+}
 

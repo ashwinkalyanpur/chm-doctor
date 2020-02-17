@@ -5,8 +5,9 @@ import './App.css';
 import { createMuiTheme, ThemeProvider, useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-import Layout from './component/Layout/Layout'
-import Personal from './component/Doctor/Personal/Personal'
+import Layout from './component/Layout/Layout';
+import TabsDoctors from './component/Doctor/TabsDoctors';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     return (
       <div>
         <Layout>
-          <Personal />
+          <TabsDoctors />
         </Layout>
       </div>
     );

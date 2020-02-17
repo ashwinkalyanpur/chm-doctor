@@ -84,6 +84,22 @@ export default function Personalinfo() {
                         autoComplete="onumber"
                     />
                 </Grid>
+                <Grid item xs={12} sm={6}>
+                    <TextField
+                        id="awards"
+                        name="awards"
+                        label="Awards"
+                        fullWidth
+                        autoComplete="Awards"
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        className={classes.button}
+                    >Upload File</Button>
+                </Grid>
                 <Grid item xs={12} sm={4}>
                     <TextField
                         required
@@ -94,7 +110,8 @@ export default function Personalinfo() {
                         autoComplete="language"
                     />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                
+                <Grid item xs={12} sm={4}>
                     <FormControlLabel
                         control={<Checkbox color="secondary" name="saveAddress" value="read" />}
                         label="Read"
@@ -108,7 +125,7 @@ export default function Personalinfo() {
                         label="Speak"
                     />
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={12} sm={4}>
                     <Button
                         variant="contained"
                         color="primary"

@@ -87,7 +87,7 @@ export default function Personal() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Submit Details' : 'Next'}
                   </Button>
                 </div>
               </React.Fragment>
