@@ -11,6 +11,7 @@ import Box from '@material-ui/core/Box';
 import Personal from './Personal/Personal';
 import ProfessionalDetails from './Professional/ProfessionalDetails';
 import Clinic from './Clinic/Clinic';
+import Hospital from './Hospital/Hospital';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -97,7 +98,7 @@ export default function NavTabs() {
         <Clinic />
       </TabPanel>
       <TabPanel value={value} index={3}>
-      Hospital page under construction
+        <Hospital />
       </TabPanel>
       <TabPanel value={value} index={4}>
       Procedures page under construction

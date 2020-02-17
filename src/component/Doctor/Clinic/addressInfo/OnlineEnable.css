@@ -1,0 +1,42 @@
+/* custom code start */
+/* Switch Styles */
+
+.switch-content {
+    flex-grow: 0;
+    max-width: 43.333333%;
+    flex-basis: 43.333333%;
+    display: inline-block;
+    min-width: 50%;
+    padding: 32px;
+}
+  
+  .switch-control .heading {
+    text-indent: 15px;
+    padding: 15px 0;
+  }
+  
+  .switch-control div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .switch-control  {
+    margin: 0 auto;
+    width: auto;
+  }
+  
+  .switch-control label {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 400;
+    font-size: 13px;
+  }
+  /* custom code end */
+  
+  .switch-control .e-disabled {
+    pointer-events: none;
+  }
+  .e-switch-wrapper, .e-css.e-switch-wrapper{
+      /* width: 50px !important; */
+  }

@@ -5,13 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import './ProfessionalDetails.css';
-import DateFnsUtils from '@date-io/date-fns';
 import Modal from 'react-bootstrap/Modal';
-import {
-    MuiPickersUtilsProvider,
-    KeyboardTimePicker,
-    KeyboardDatePicker,
-} from '@material-ui/pickers';
+
 import { withStyles } from '@material-ui/core/styles';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -21,6 +16,7 @@ import Awards from './Award/Awards';
 import PatientTreated from './PatientTable/PatientTreated';
 import DoctorExperience from './DoctorExpTable/DoctorExperience';
 import DoctorQualification from './DoctorQuaTable/DoctorQualification';
+import Research from './Research/Research';
 
 const useStyles = makeStyles(theme => ({
     buttons: {
@@ -215,54 +211,10 @@ export default function ProfessionalDetails() {
                     <Modal.Header closeButton>
                         <Modal.Title id="example-modal-sizes-title-lg">
                             Research Articles
-                </Modal.Title>
+                    </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Grid item xs={12} sm={10}>
-                            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                <KeyboardDatePicker
-                                    margin="normal"
-                                    id="date-picker-dialog"
-                                    label="Research Articles Published Date"
-                                    format="MM/dd/yyyy"
-                                    value={selectedDate}
-                                    onChange={handleDateChange}
-                                    KeyboardButtonProps={{
-                                        'aria-label': 'change date',
-                                    }}
-                                />
-                            </MuiPickersUtilsProvider>
-                        </Grid>
-                        <Grid className="row">
-                            <Grid className="col-12">
-                                <TextField
-                                    placeholder="Research Description"
-                                    multiline={true}
-                                    rows={2}
-                                    rowsMax={4}
-                                />
-                            </Grid>
-                        </Grid>
-                        <Grid className="row">
-                            <Grid className="col-6">
-                                <TextField
-                                    required
-                                    id="uploadFile"
-                                    name="uploadFile"
-                                    label="Upload Research Articles Image"
-                                    fullWidth
-                                    autoComplete="uploadFile"
-                                />
-                            </Grid>
-                            <Grid className="col-6">
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    className={classes.button}
-                                >Upload Research Articles Image</Button>
-                            </Grid>
-
-                        </Grid>
+                        <Research />
                         <Grid className="col-12">
                             <Button variant="contained" onClick={handleCloseRes}>
                                 Cancel
