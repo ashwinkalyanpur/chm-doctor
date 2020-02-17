@@ -1,0 +1,16 @@
+.MuiAppBar-colorPrimary, .MuiBox-root-98{
+    padding: 0 !important;
+}
+a:hover.MuiTab-fullWidth{
+    color:#fff !important;
+    opacity: 0.7;
+    text-decoration: none;
+}
+.MuiAppBar-colorPrimary {
+    background-color: #01c7ce !important;
+}
+a:hover.MuiTab-fullWidth{
+    color: #A5DFE1;
+    background: #54667a;
+    text-decoration: none;
+}
