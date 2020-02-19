@@ -1,3 +1,11 @@
 .MuiFormControl-root{
     min-width: 80% !important;
 }
+.fa-plus-circle:before {
+    content: "\f055";
+}
+.align-icon{
+    position: absolute;
+    right: 0;
+    top: 15px;
+}

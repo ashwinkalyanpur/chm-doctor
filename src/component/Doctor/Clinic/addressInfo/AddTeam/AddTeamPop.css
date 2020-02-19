@@ -1,0 +1,19 @@
+.fixWidth{
+    width: 50% !important;
+    background-color: #fff;
+    padding:15px;
+}
+.titleBar h4{
+    display: inline-block;
+}
+.titleBar span{
+    float: right;
+    cursor: pointer;
+}
+.fa-plus-circle{
+    cursor: pointer;
+}
+.spacing-btn {
+    padding:15px;
+    text-align: right;
+}

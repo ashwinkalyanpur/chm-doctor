@@ -8,9 +8,9 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-import DateWorkingInfo from './DateWorkingInfo';
 
 import './Hospital.css';
 
@@ -119,7 +119,6 @@ class Hospital extends React.Component {
                             </FormControl>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Grid item xs={12} sm={12}>
                             <FormControl className={classes.formControl}>
                                 <InputLabel ref={this.InputLabelRef} htmlFor="outlined-hospital-simple">
                                     Hospital Name
@@ -140,30 +139,88 @@ class Hospital extends React.Component {
                                     <MenuItem value={"hospital 3"}>Hospital Name 3</MenuItem>
                                 </Select>
                             </FormControl>
-                            </Grid>
-                            <Grid item xs={12} sm={12}>
-                                <FormControl className={classes.formControl}>
-                                    <TextField
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <FormControl className={classes.formControl}>
+                                <TextField
                                     required
                                     id="DPSpeciality"
                                     name="DPSpeciality"
                                     label="Designation/ Primary speciality"
                                     fullWidth
                                     autoComplete="DPSpeciality"
-                                    />
-                                </FormControl>
-                            </Grid>
+                                />
+                            </FormControl>
                         </Grid>
-                       
                         <Grid item xs={12} sm={4}>
-                            <InputLabel ref={this.InputLabelRef} htmlFor="outlined-hospital-simple">
-                                Years of working
-                            </InputLabel>
-                            <DateWorkingInfo />
+                            <FormControl className={classes.formControl}>
+                                <TextField
+                                    required
+                                    id="DPSpeciality"
+                                    name="DPSpeciality"
+                                    label="Years of working"
+                                    fullWidth
+                                    autoComplete="DPSpeciality"
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <FormControl className={classes.formControl}>
+                                <TextField
+                                    required
+                                    id="DPSpeciality"
+                                    name="DPSpeciality"
+                                    label="Hospital Address"
+                                    fullWidth
+                                    autoComplete="DPSpeciality"
+                                    multiline={true}
+                                    rows={2}
+                                    rowsMax={4}
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <FormControl className={classes.formControl}>
+                                <TextField
+                                    required
+                                    id="DPSpeciality"
+                                    name="DPSpeciality"
+                                    label="Achievements in the Hospital"
+                                    fullWidth
+                                    autoComplete="DPSpeciality"
+                                    multiline={true}
+                                    rows={2}
+                                    rowsMax={4}
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <FormControl className={classes.formControl}>
+                                <TextField
+                                    required
+                                    id="DPSpeciality"
+                                    name="DPSpeciality"
+                                    label="Medical Team"
+                                    fullWidth
+                                    autoComplete="DPSpeciality"
+                                    multiline={true}
+                                    rows={2}
+                                    rowsMax={4}
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid className="col-12 top-spacing">
+                            <Button variant="contained">
+                                Cancel
+                            </Button>
+                            <Button variant="contained" color="primary">
+                                Add
+                            </Button>
                         </Grid>
                     </Grid>
                 </React.Fragment>
             </form>
+            
         );
     }
 }

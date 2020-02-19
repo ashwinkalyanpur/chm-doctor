@@ -1,3 +1,9 @@
 .MuiFormControl-root.MuiTextField-root{
     width: 100% !important;
 }
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained{
+    margin-right: 15px;
+}
+.top-spacing{
+    text-align: right;
+}

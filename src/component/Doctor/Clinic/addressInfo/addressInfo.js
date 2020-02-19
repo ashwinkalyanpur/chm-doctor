@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, useState } from "react";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import ReactDOM from "react-dom";
@@ -11,8 +11,20 @@ import Select from "@material-ui/core/Select";
 import DetailsTable from "./detailsTable";
 import TextField from '@material-ui/core/TextField';
 import OnlineEnable from './OnlineEnable';
+import { makeStyles } from '@material-ui/core/styles';
+import { loadCSS } from 'fg-loadcss';
+import  AddTeamPopup  from './AddTeam/AddTeamPop';
 
 import './addressInfo.css';
+import './all.css';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        '& > .fa': {
+            margin: theme.spacing(2),
+        },
+    },
+}));
 
 const styles = theme => ({
     formControl: {
@@ -40,11 +52,21 @@ class AddressInfo extends React.Component {
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
     };
+    render() {
+        const classes = useStyles();
+        React.useEffect(() => {
+            loadCSS(
+                'https://use.fontawesome.com/releases/v5.1.0/css/all.css',
+                document.querySelector('#font-awesome-css'),
+            );
+        }, []);
 
+    }
     render() {
         const { classes } = this.props;
 
         this.InputLabelRef = React.createRef();
+       
         return (
             <form className={classes.root} autoComplete="off">
                 <React.Fragment>
@@ -118,78 +140,82 @@ class AddressInfo extends React.Component {
                                 </Select>
                             </FormControl>
                         </Grid>
-                            <Grid item xs={12} sm={4}>
-                                <FormControl className={classes.formControl}>
-                                    <InputLabel ref={this.InputLabelRef} htmlFor="outlined-clinic-simple">
-                                        Clinic
-                                    </InputLabel>
-                                    <Select
-                                        value={this.state.clinic}
-                                        onChange={this.handleChange}
-                                        inputProps={{
-                                            name: 'Clinic',
-                                            id: 'clinic-native-simple',
-                                        }}
-                                    >
-                                        <MenuItem value="">
-                                            <em>Select</em>
-                                        </MenuItem>
-                                        <MenuItem value={"clinic 1"}>clinic 1</MenuItem>
-                                        <MenuItem value={"clinic 2"}>clinic 2</MenuItem>
-                                        <MenuItem value={"clinic 3"}>clinic 3</MenuItem>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid item xs={12} sm={4}>
-                                <FormControl className={classes.formControl}>
+                        <Grid item xs={12} sm={4}>
+                            <FormControl className={classes.formControl}>
                                 <InputLabel ref={this.InputLabelRef} htmlFor="outlined-clinic-simple">
-                                        Doctor
+                                    Clinic
                                     </InputLabel>
-                                    <Select
-                                        value={this.state.doctor}
-                                        onChange={this.handleChange}
-                                        inputProps={{
-                                            name: 'doctor',
-                                            id: 'doctor-native-simple',
-                                        }}
-                                    >
-                                        <MenuItem value="">
-                                            <em>Select</em>
-                                        </MenuItem>
-                                        <MenuItem value={"doctor 1"}>doctor 1</MenuItem>
-                                        <MenuItem value={"doctor 2"}>doctor 2</MenuItem>
-                                        <MenuItem value={"doctor 3"}>doctor 3</MenuItem>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid item xs={12} sm={4}>
-                                <FormControl className={classes.formControl}>
-                                    <TextField
+                                <Select
+                                    value={this.state.clinic}
+                                    onChange={this.handleChange}
+                                    inputProps={{
+                                        name: 'Clinic',
+                                        id: 'clinic-native-simple',
+                                    }}
+                                >
+                                    <MenuItem value="">
+                                        <em>Select</em>
+                                    </MenuItem>
+                                    <MenuItem value={"clinic 1"}>clinic 1</MenuItem>
+                                    <MenuItem value={"clinic 2"}>clinic 2</MenuItem>
+                                    <MenuItem value={"clinic 3"}>clinic 3</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <FormControl className={classes.formControl}>
+                                <InputLabel ref={this.InputLabelRef} htmlFor="outlined-clinic-simple">
+                                    Doctor
+                                    </InputLabel>
+                                <Select
+                                    value={this.state.doctor}
+                                    onChange={this.handleChange}
+                                    inputProps={{
+                                        name: 'doctor',
+                                        id: 'doctor-native-simple',
+                                    }}
+                                >
+                                    <MenuItem value="">
+                                        <em>Select</em>
+                                    </MenuItem>
+                                    <MenuItem value={"doctor 1"}>doctor 1</MenuItem>
+                                    <MenuItem value={"doctor 2"}>doctor 2</MenuItem>
+                                    <MenuItem value={"doctor 3"}>doctor 3</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <FormControl className={classes.formControl}>
+                                <TextField
                                     id="otherClinic"
                                     name="otherClinic"
                                     label="Associated with another clinic"
                                     fullWidth
                                     autoComplete="oClinic"
                                 />
-                                </FormControl>
-                            </Grid>
-                            <Grid item xs={12} sm={4}>
-                                <FormControl className={classes.formControl}>
-                                    <TextField
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <FormControl className={classes.formControl}>
+                                <TextField
                                     id="otherClinic"
                                     name="otherClinic"
-                                    label="Associated with another clinic"
+                                    label="Add My Team"
                                     fullWidth
                                     autoComplete="oClinic"
                                 />
-                                </FormControl>
-                            </Grid>
-                            <Grid item xs={12} sm={8}>
-                                    <OnlineEnable />
-                            </Grid>
-                            <Grid item xs={12} sm={12}>
-                                <DetailsTable />
-                            </Grid>
+                                <div className="align-icon">
+                                <AddTeamPopup />
+                                </div>
+                                {/* <Icon className="fa fa-plus-circle " color="primary" /> */}
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={8}>
+                            <OnlineEnable />
+                        </Grid>
+                        <Grid item xs={12} sm={12}>
+                            <DetailsTable />
+                        </Grid>
                     </Grid>
                 </React.Fragment>
             </form>

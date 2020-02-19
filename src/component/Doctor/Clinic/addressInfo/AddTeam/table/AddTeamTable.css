@@ -1,0 +1,8 @@
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded{
+    position: relative;
+    max-height: 400px;
+    overflow: auto;   
+}
+.titleBar{
+    margin-bottom: 10px;
+}
