@@ -5,7 +5,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
-
 import './Social.css';
 
 const useStyles = makeStyles(theme => ({
@@ -36,8 +35,10 @@ export default function Social() {
                         label="Google"
                         fullWidth
                         autoComplete="google"
+                        className="fa fa-google-plus"
                     />
                 </Grid>
+
                 <Grid item xs={12} sm={4}>
                     <TextField
                         id="Facebook"
@@ -45,6 +46,7 @@ export default function Social() {
                         label="Facebook"
                         fullWidth
                         autoComplete="facebook"
+                        className="fa fa-facebook"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -54,15 +56,18 @@ export default function Social() {
                         label="Instagram"
                         fullWidth
                         autoComplete="instagram"
+                        className="fa fa-instagram"
+
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <TextField
-                        id="Tweeter"
-                        name="Tweeter"
-                        label="Tweeter"
+                        id="Twitter"
+                        name="Twitter"
+                        label="Twitter"
                         fullWidth
-                        autoComplete="tweeter"
+                        autoComplete="Twitter"
+                        className="fa fa-twitter"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -72,6 +77,7 @@ export default function Social() {
                         label="LinkedIn"
                         fullWidth
                         autoComplete="linkedIn"
+                        className="fa fa-linkedin"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -81,6 +87,7 @@ export default function Social() {
                         label="Skype ID"
                         fullWidth
                         autoComplete="skypeID"
+                        className="fa fa-skype"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -90,6 +97,7 @@ export default function Social() {
                         label="Website"
                         fullWidth
                         autoComplete="website"
+                        className="fa fa-globe"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -99,6 +107,7 @@ export default function Social() {
                         label="Youtube Link"
                         fullWidth
                         autoComplete="youtubeLink"
+                        className="fa fa-youtube"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -108,6 +117,7 @@ export default function Social() {
                         label="Member of Associations"
                         fullWidth
                         autoComplete="MemberofAssociations"
+                        className="fa fa-user-md"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -117,6 +127,7 @@ export default function Social() {
                         label="Interested to Contribute to needy"
                         fullWidth
                         autoComplete="InterestedtoContributetoneedy"
+                        className="fa fa-money"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -126,6 +137,7 @@ export default function Social() {
                         label="Wats app number"
                         fullWidth
                         autoComplete="watsappnumber"
+                        className="fa fa-whatsapp"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -135,6 +147,7 @@ export default function Social() {
                         label="Viemo link"
                         fullWidth
                         autoComplete="viemolink"
+                        className="fa fa-vimeo-square"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
@@ -144,15 +157,27 @@ export default function Social() {
                         label="Blog"
                         fullWidth
                         autoComplete="blog"
+                        className="fa fa-file"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <TextField
-                        id="Print rest link"
+                        id="Tumblr"
                         name="Print rest link"
                         label="Print rest link"
                         fullWidth
                         autoComplete="printrestlink"
+                        className="fa fa-pinterest"
+                    />
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                    <TextField
+                        id="Tumblr"
+                        name="Tumblr"
+                        label="Tumblr"
+                        fullWidth
+                        autoComplete="Tumblr"
+                        className="fa fa-tumblr"
                     />
                 </Grid>
                 <Grid container spacing={3}>

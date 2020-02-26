@@ -1,3 +1,22 @@
 .MuiGrid-spacing-xs-3{
     margin: -17px !important;
 }
+.fa-google-plus:before, 
+.fa-facebook:before,
+.fa-instagram:before,
+.fa-twitter:before,
+.fa-linkedin:before,
+.fa-skype:before,
+.fa-globe:before,
+.fa-youtube:before,
+.fa-user-md:before,
+.fa-money:before,
+.fa-whatsapp:before,
+.fa-vimeo-square:before,
+.fa-file:before,
+.fa-pinterest:before,
+.fa-tumblr:before {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}

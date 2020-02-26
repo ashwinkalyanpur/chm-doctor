@@ -14,6 +14,7 @@ import Procedures from '../src/component/Doctor/Procedures/Procedures';
 import ListMenu from '../src/Menu/ListMenu';
 import Social from '../src/component/Doctor/Social/Social';
 import MasterControl from '../src/component/Doctor/MasterControl/MasterControl';
+import 'font-awesome/css/font-awesome.min.css';
 import './App.css';
 
 
