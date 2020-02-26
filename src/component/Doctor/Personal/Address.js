@@ -25,7 +25,7 @@ class Address extends Component {
       <React.Fragment>
         <Typography variant="h6" gutterBottom>
           Address Details
-     </Typography>
+        </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <TextField

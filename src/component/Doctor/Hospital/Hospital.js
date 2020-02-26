@@ -48,8 +48,8 @@ class Hospital extends React.Component {
         return (
             <form className={classes.root} autoComplete="off">
                 <React.Fragment>
-                    <Typography variant="h6" gutterBottom>
-                        Professional Details
+                <Typography component="h1" variant="h4" align="center">
+                        Hospital Details
                     </Typography>
                     <Grid container spacing={3}>
                         <Grid item xs={12} sm={4}>

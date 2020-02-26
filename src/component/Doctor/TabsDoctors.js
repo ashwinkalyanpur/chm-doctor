@@ -12,6 +12,7 @@ import Personal from './Personal/Personal';
 import ProfessionalDetails from './Professional/ProfessionalDetails';
 import Clinic from './Clinic/Clinic';
 import Hospital from './Hospital/Hospital';
+import Procedures from './Procedures/Procedures';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -101,7 +102,7 @@ export default function NavTabs() {
         <Hospital />
       </TabPanel>
       <TabPanel value={value} index={4}>
-      Procedures page under construction
+        <Procedures />
       </TabPanel>
       <TabPanel value={value} index={5}>
       Social page under construction

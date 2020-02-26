@@ -1,0 +1,18 @@
+.makeStyles-nested-2{
+    padding-left: 0 !important;
+}
+.MuiListItemIcon-root{
+    min-width: auto !important;
+    padding-right: 10px;
+}
+.makeStyles-nested-2 ul{
+    padding-left: 0;
+}
+/* .MuiCollapse-entered:has .makeStyles-currentClass-3 */
+/* .MuiCollapse-entered .makeStyles-currentClass-3 */
+/* .MuiCollapse-entered ~ .MuiListItem-button */
+/* .MuiListItem-button:has(+ .MuiListItem-button) */
+.MuiListItem-root.Mui-selected
+ {
+    border-left: 3px solid #fa0000 !important;
+}

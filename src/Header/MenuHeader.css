@@ -1,0 +1,9 @@
+.MuiToolbar-regular{
+    min-height: 24px !important;
+}
+.MuiAppBar-colorPrimary{
+    background-color: transparent !important;
+    color:#000 !important;
+    padding:7px !important;
+    box-shadow: none !important;
+}

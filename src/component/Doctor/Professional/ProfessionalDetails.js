@@ -92,7 +92,7 @@ export default function ProfessionalDetails() {
     };
     return (
         <React.Fragment>
-            <Typography variant="h6" gutterBottom>
+            <Typography component="h1" variant="h4" align="center">
                 Professional Details
             </Typography>
             <Grid container spacing={3}>
