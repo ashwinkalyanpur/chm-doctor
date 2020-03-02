@@ -16,8 +16,15 @@ import Awards from './Award/Awards';
 import PatientTreated from './PatientTable/PatientTreated';
 import DoctorExperience from './DoctorExpTable/DoctorExperience';
 import DoctorQualification from './DoctorQuaTable/DoctorQualification';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Link from '@material-ui/core/Link';
 import Research from './Research/Research';
+import SearchByDoctor from '../SearchDoctor/SearchByDoctor';
+import DoctorSignature from './DoctorSignature/DoctorSignature';
 
+function handleClick(event) {
+    event.preventDefault();
+  }
 const useStyles = makeStyles(theme => ({
     buttons: {
         display: 'flex',
@@ -92,6 +99,29 @@ export default function ProfessionalDetails() {
     };
     return (
         <React.Fragment>
+            <Grid container spacing={3}>
+                <Grid item xs={12} sm={12}>
+                    <Breadcrumbs aria-label="breadcrumb">
+                        <Link
+                            color="inherit"
+                        >
+                            Home
+                        </Link>
+                        <Link
+                            color="inherit"
+                            href={'/'}
+                        >
+                            Doctor
+                        </Link>
+                        <Link color="textPrimary" aria-current="page" href="/ProfessionalDetails" onClick={handleClick}>
+                            Professional Details
+                        </Link>
+                </Breadcrumbs>
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                    <SearchByDoctor />
+                </Grid>
+            </Grid>
             <Typography component="h1" variant="h4" align="center">
                 Professional Details
             </Typography>
@@ -169,16 +199,18 @@ export default function ProfessionalDetails() {
                     </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Awards />
                         <Grid className="col-12 top-spacing">
-                            <Button variant="contained" onClick={handleCloseAwd}>
-                                Cancel
-                            </Button>
-                            <Button variant="contained" color="primary" onClick={handleCloseAwd}>
-                                Add
-                            </Button>
+                            <Awards />
                         </Grid>
                     </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="contained" onClick={handleCloseAwd}>
+                            Cancel
+                        </Button>
+                        <Button variant="contained" color="primary" onClick={handleCloseAwd}>
+                            Add
+                        </Button>
+                    </Modal.Footer>
                 </Modal>
                 <Modal
                     size="lg"
@@ -192,15 +224,18 @@ export default function ProfessionalDetails() {
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Grid className="col-12">
-                            <Button variant="contained" onClick={handleCloseDoc}>
-                                Cancel
-                            </Button>
-                            <Button variant="contained" color="primary" onClick={handleCloseDoc}>
-                                Add
-                            </Button>
+                        <Grid className="col-12 top-spacing">
+                            <DoctorSignature />
                         </Grid>
                     </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="contained" onClick={handleCloseDoc}>
+                            Cancel
+                        </Button>
+                        <Button variant="contained" color="primary" onClick={handleCloseDoc}>
+                            Add
+                        </Button>
+                    </Modal.Footer>
                 </Modal>
                 <Modal
                     size="lg"
@@ -214,16 +249,18 @@ export default function ProfessionalDetails() {
                     </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Research />
-                        <Grid className="col-12">
-                            <Button variant="contained" onClick={handleCloseRes}>
-                                Cancel
-                            </Button>
-                            <Button variant="contained" color="primary" onClick={handleCloseRes}>
-                                Add
-                            </Button>
+                        <Grid className="col-12 top-spacing">
+                            <Research />
                         </Grid>
                     </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="contained" onClick={handleCloseRes}>
+                            Cancel
+                        </Button>
+                        <Button variant="contained" color="primary" onClick={handleCloseRes}>
+                            Add
+                        </Button>
+                    </Modal.Footer>
                 </Modal>
             </Grid>
         </React.Fragment>

@@ -166,7 +166,7 @@ class AddressInfo extends React.Component {
                             <FormControl className={classes.formControl}>
                                 <InputLabel ref={this.InputLabelRef} htmlFor="outlined-clinic-simple">
                                     Doctor
-                                    </InputLabel>
+                                </InputLabel>
                                 <Select
                                     value={this.state.doctor}
                                     onChange={this.handleChange}
@@ -207,7 +207,6 @@ class AddressInfo extends React.Component {
                                 <div className="align-icon">
                                 <AddTeamPopup />
                                 </div>
-                                {/* <Icon className="fa fa-plus-circle " color="primary" /> */}
                             </FormControl>
                         </Grid>
                         <Grid item xs={12} sm={8}>

@@ -14,39 +14,24 @@ import Grid from '@material-ui/core/Grid';
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import TextField from '@material-ui/core/TextField';
-import Pagination from '@material-ui/lab/Pagination';
-import { TableFooter } from '@material-ui/core';
 
 
-import './DoctorExperience.css';
+
+import './SearchDoctor.css';
 
 
-function createData(Designation, hospital, joinedDate, relivedDate, location) {
-  return { Designation, hospital, joinedDate, relivedDate, location };
+
+
+function createData(hname, dname, ftime, ttime, did, spcial) {
+  return { hname, dname, ftime, ttime, did, spcial };
 }
 
 const rows = [
-        createData( 'Sample 16', 'Apollo', 1995, 2001, 'Malleshwaram' ),
-        createData( 'Sample 17', 'Apollo 1', 1999, 2002, 'MG Road' ),
-        createData( 'Sample 18', 'Apollo 2', 1996, 2003, 'Gandhi bazaar' ),
-        createData( 'Sample 19', 'Apollo 3', 1984, 2004, 'BTM Layout' ),
-        createData( 'Sample 20', 'Apollo 4', 2001, 2005, 'HSR Layout' ),
-        createData( 'Sample 1', 'Apollo 5', 2000, 2006, 'JP Nagar' ),
-        createData( 'Sample 2', 'Manipal Hospital 1', 2003, 2007, 'Rajajinagar' ),
-        createData( 'Sample 3', 'Manipal Hospital 2', 2001, 2008, 'RV Road' ),
-        createData( 'Sample 4', 'Manipal Hospital 3', 1993, 2009, 'Malleshwaram' ),
-        createData( 'Sample 5', 'Manipal Hospital 4', 1996, 2010, 'MG Road' ),
-        createData( 'Sample 6', 'Manipal Hospital 5', 1995, 2011, 'Gandhi bazaar' ),
-        createData( 'Sample 7', 'Fortis Hospital 1', 1996, 2012, 'BTM Layout' ),
-        createData( 'Sample 8', 'Fortis Hospital 2', 2003, 2013, 'HSR Layout' ),
-        createData( 'Sample 9', 'Fortis Hospital 3', 2008, 2014, 'JP Nagar' ),
-        createData( 'Sample 10', 'Fortis Hospital 4', 2006, 2015, 'Rajajinagar' ),
-        createData( 'Sample 11', 'Fortis Hospital 5', 2001, 2016, 'RV Road' ),
-        createData( 'Sample 12', 'Columbia Hospital 1', 2005, 2017, 'Malleshwaram' ),
-        createData( 'Sample 13', 'Columbia Hospital 2', 1996, 2018, 'MG Road' ),
-        createData( 'Sample 14', 'Columbia Hospital 3', 2003, 2019, 'JP Nagar' ),
-        createData( 'Sample 15', 'Columbia Hospital 4', 1984, 2020, 'Rajajinagar' ),
-
+  createData('Manipal Hospital, M.G.Road', 'Dr Srinivas', "14:00", "15:00", 1200, "OPD"),
+  createData('Manipal Hospital, R.V.Road', 'Dr Raghavendra', "10:00", "12:00", 1202, "IPD"),
+  createData('Apollo  Hospital, M.G.Road', 'Dr Ramakrishna', "19:00", "2200", 1305, "IPD"),
+  createData('Apollo Hospital, Jayanagar', 'Dr Manjunath', "11:00", "13:30", 1505, "IPD"),
+  createData('Manipal Hospital, J.P.Nagar', 'Dr Devi Shetty', "10:00", "14:00", 1665, "OPD"),
 ];
 
 
@@ -73,15 +58,10 @@ const useStyles = makeStyles(theme => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
-  root: {
-    '& > *': {
-      marginTop: theme.spacing(2),
-    },
-  },
 }));
 
 
-export default function DoctorExperience() {
+export default function DetailsTable() {
   const classes = useStyles();
 
   const handleCloseDetailsTable = () => setShowDetailsTable(false);
@@ -100,28 +80,40 @@ export default function DoctorExperience() {
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleCloseModel = () => {
+    setOpen(false);
+  }
   return (
     <Table className={classes.table} size="small" aria-label="a dense table">
       <TableHead>
         <TableRow>
-          <TableCell>Designation</TableCell>
-          <TableCell align="right">Patients Treated</TableCell>
-          <TableCell align="right">Joined Rate</TableCell>
-          <TableCell align="right">Relived Date</TableCell>
-          <TableCell align="right">location</TableCell>
+          <TableCell>Hospital/Clinic Name</TableCell>
+          <TableCell align="right">Doctor Name</TableCell>
+          <TableCell align="right">Time From</TableCell>
+          <TableCell align="right">Time Till</TableCell>
+          <TableCell align="right">Doctor ID</TableCell>
+          <TableCell align="right">Specialized In</TableCell>
           <TableCell align="right">Action</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {rows.map(row => (
-          <TableRow key={row.Designation}>
+          <TableRow key={row.hname}>
             <TableCell component="th" scope="row">
-              {row.Designation}
+              {row.hname}
             </TableCell>
-            <TableCell align="right">{row.hospital}</TableCell>
-            <TableCell align="right">{row.joinedDate}</TableCell>
-            <TableCell align="right">{row.relivedDate}</TableCell>
-            <TableCell align="right">{row.location}</TableCell>
+            <TableCell align="right">{row.dname}</TableCell>
+            <TableCell align="right">{row.ftime}</TableCell>
+            <TableCell align="right">{row.ttime}</TableCell>
+            <TableCell align="right">{row.did}</TableCell>
+            <TableCell align="right">{row.spcial}</TableCell>
             <TableCell align="right">
               <IconButton edge="end" aria-label="edit">
                 <EditIcon onClick={() => setShowDetailsTable(true)} />
@@ -144,70 +136,84 @@ export default function DoctorExperience() {
                 <Modal.Body>
                   <Grid container spacing={3}>
                     <Grid item xs={6} sm={4}>
-                      <InputLabel htmlFor="Designation">
-                      Designation Name
+                      <InputLabel htmlFor="hname">
+                        Hospital Name
                       </InputLabel>
                       <FormControl className={classes.formControl}>
                         <TextField
-                          id="Designation"
-                          name="Designation"
-                          value={row.Designation}
+                          id="hname"
+                          name="hname"
+                          value={row.hname}
                           fullWidth
                           autoComplete="oClinic"
                         />
                       </FormControl>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="hospital">
-                        Patients Treated
+                    <InputLabel htmlFor="dname">
+                        Doctor Name
                       </InputLabel>
                       <FormControl className={classes.formControl}>
                         <TextField
-                          id="hospital"
-                          name="hospital"
-                          value={row.hospital}
+                          id="dname"
+                          name="dname"
+                          value={row.dname}
                           fullWidth
                           autoComplete="oClinic"
                         />
                       </FormControl>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="joinedDate">
-                      Joined Rate
+                    <InputLabel htmlFor="ftime">
+                        Time From
                       </InputLabel>
                       <FormControl className={classes.formControl}>
                         <TextField
-                          id="joinedDate"
-                          name="joinedDate"
-                          value={row.joinedDate}
+                          id="ftime"
+                          name="ftime"
+                          value={row.ftime}
                           fullWidth
                           autoComplete="oClinic"
                         />
                       </FormControl>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="relivedDate">
-                        Relived Date
+                    <InputLabel htmlFor="ttime">
+                        Time To
                       </InputLabel>
                       <FormControl className={classes.formControl}>
                         <TextField
-                          id="relivedDate"
-                          name="relivedDate"
-                          value={row.relivedDate}
+                          id="ttime"
+                          name="ttime"
+                          value={row.ttime}
                           fullWidth
                           autoComplete="oClinic"
                         />
                       </FormControl>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="location">
-                        location
+                    <InputLabel htmlFor="did">
+                        Doctor ID
                       </InputLabel>
                       <FormControl className={classes.formControl}>
                         <TextField
-                          id="location"
-                          name="location"
-                          value={row.location}
+                          id="did"
+                          name="did"
+                          value={row.did}
+                          fullWidth
+                          autoComplete="oClinic"
+                        />
+                      </FormControl>
+                    </Grid>
+                    <Grid item xs={6} sm={4}>
+                    <InputLabel htmlFor="spcial">
+                       Specialized In
+                      </InputLabel>
+                      <FormControl className={classes.formControl}>
+                        <TextField
+                          id="spcial"
+                          name="spcial"
+                          value={row.spcial}
                           fullWidth
                           autoComplete="oClinic"
                         />
@@ -222,7 +228,6 @@ export default function DoctorExperience() {
                         </Button>
                     </Grid>
                   </Grid>
-                  
                 </Modal.Body>
               </Modal>
               {/* End Edit Doctor Popup */}
@@ -241,53 +246,51 @@ export default function DoctorExperience() {
                 <Modal.Body>
                   <Grid container spacing={3}>
                     <Grid item xs={6} sm={4}>
-                      <InputLabel htmlFor="Designation">
-                      {row.Designation}
+                      <InputLabel htmlFor="hname">
+                      {row.hname}
                       </InputLabel>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="hospital">
-                      {row.hospital}
+                    <InputLabel htmlFor="dname">
+                      {row.dname}
                       </InputLabel>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="joinedDate">
-                      {row.joinedDate}
+                    <InputLabel htmlFor="ftime">
+                      {row.ftime}
                       </InputLabel>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="relivedDate">
-                      {row.relivedDate}
+                    <InputLabel htmlFor="ttime">
+                      {row.ttime}
                       </InputLabel>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="location">
-                      {row.location}
+                    <InputLabel htmlFor="did">
+                        {row.did}
                       </InputLabel>
+                    </Grid>
+                    <Grid item xs={6} sm={4}>
+                    <InputLabel htmlFor="spcial">
+                        {row.spcial}
+                      </InputLabel>
+                    </Grid>
+                    <Grid className="top-spacing" item xs={12} sm={12}>
+                      <Button variant="contained" onClick={handleCloseDeleteTable}>
+                        Cancel
+                        </Button>
+                      <Button variant="contained" color="primary" onClick={handleCloseDeleteTable}>
+                        Delete
+                        </Button>
                     </Grid>
                   </Grid>
                 </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="contained" onClick={handleCloseDeleteTable}>
-                    Cancel
-                    </Button>
-                  <Button variant="contained" color="primary" onClick={handleCloseDeleteTable}>
-                    Delete
-                  </Button>
-                </Modal.Footer>
               </Modal>
               {/* End Delete Doctor Popup */}
             </TableCell>
           </TableRow>
         ))}
       </TableBody>
-      <TableFooter>
-        <TableCell colSpan="5">
-      <Grid className="top-spacing" item xs={12} sm={12}>
-        <Pagination count={10} color="primary" />
-      </Grid>
-      </TableCell>
-      </TableFooter>
     </Table>
 
   );

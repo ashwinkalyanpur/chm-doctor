@@ -1,4 +1,4 @@
-.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded{
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded, .MuiExpansionPanelDetails-root{
     position: relative;
     max-height: 400px;
     overflow: auto;   

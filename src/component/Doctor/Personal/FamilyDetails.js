@@ -3,7 +3,6 @@ import React, { Fragment, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import DateFnsUtils from '@date-io/date-fns';
@@ -13,6 +12,10 @@ import {
     KeyboardDatePicker,
 } from '@material-ui/pickers';
 
+
+function handleClick(event) {
+    event.preventDefault();
+  }
 const useStyles = makeStyles(theme => ({
     buttons: {
         display: 'flex',
@@ -32,8 +35,8 @@ export default function FamilyDetails() {
     };
     return (
         <React.Fragment>
-            <Typography variant="h6" gutterBottom>
-                Family Details
+            <Typography component="h1" variant="h4" align="center">
+                 Family Details
             </Typography>
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>

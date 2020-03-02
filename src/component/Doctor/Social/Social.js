@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Grid from '@material-ui/core/Grid';
+import SearchByDoctor from '../SearchDoctor/SearchByDoctor';
+import Link from '@material-ui/core/Link';
 import './Social.css';
+
+
+function handleClick(event) {
+    event.preventDefault();
+  }
 
 const useStyles = makeStyles(theme => ({
     buttons: {
@@ -24,6 +31,26 @@ export default function Social() {
 
     return (
         <React.Fragment>
+            <Grid container spacing={3}>
+                <Grid item xs={12} sm={12}>
+                    <Breadcrumbs aria-label="breadcrumb">
+                        <Link
+                            color="inherit"
+                        >
+                            Home
+                        </Link>
+                        <Link
+                            color="inherit"
+                            href={'/'}
+                        >
+                            Doctor
+                        </Link>
+                        <Link color="textPrimary" aria-current="page" href="/Social" onClick={handleClick}>
+                            Social
+                        </Link>
+                </Breadcrumbs>
+                </Grid>
+            </Grid>
             <Typography component="h1" variant="h4" align="center">
                 Social Media
             </Typography>
@@ -117,7 +144,7 @@ export default function Social() {
                         label="Member of Associations"
                         fullWidth
                         autoComplete="MemberofAssociations"
-                        className="fa fa-user-md"
+                        className="fa fa-user-md social"
                     />
                 </Grid>
                 <Grid item xs={12} sm={4}>

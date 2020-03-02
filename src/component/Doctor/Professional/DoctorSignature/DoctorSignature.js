@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import './Awards.css';
+import './DoctorSignature.css';
 
 
 const useStyles = makeStyles(theme => ({
@@ -19,20 +19,12 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function Awards() {
+export default function DoctorSignature() {
     const classes = useStyles();
 
     return (
         <React.Fragment>
             <Grid container spacing={3}>
-                <Grid item xs={12} sm={10}>
-                    <TextField
-                        placeholder="Description"
-                        multiline={true}
-                        rows={2}
-                        rowsMax={4}
-                    />
-                </Grid>
                     <Grid className="col-6">
                         <TextField
                             required

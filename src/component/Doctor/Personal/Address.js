@@ -5,9 +5,14 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import TempAddress from './TempAddress';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Collapse, CardBody, Card } from 'reactstrap';
 
 import './Address.css';
+
+
+function handleClick(event) {
+  event.preventDefault();
+}
 
 class Address extends Component {
   constructor(props) {
@@ -23,8 +28,8 @@ class Address extends Component {
   render() {
     return (
       <React.Fragment>
-        <Typography variant="h6" gutterBottom>
-          Address Details
+        <Typography component="h1" variant="h4" align="center">
+          Personal Details
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>

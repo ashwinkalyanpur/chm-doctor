@@ -113,7 +113,7 @@ export default function ListMenu() {
             <ListItem button 
                 selected={selectedIndex === 1} onClick={event => handleClickDoc(event, 1)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa  fa-medkit" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Doctor" />
                 {openDOC ? <ExpandMore /> : <ExpandLess />}
@@ -121,9 +121,12 @@ export default function ListMenu() {
             <Collapse in={!openDOC} timeout="auto" unmountOnExit >
                 <List  component="div" disablePadding>
                     <ListItem button >
-                        <ul >
+                        <ul>
                             <li>
-                                <Link to={'/'} selected className="nav-link">Personal Details</Link>
+                                <Link to={'/'} selected className="nav-link">Search Doctor</Link>
+                            </li>
+                            <li>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -151,7 +154,7 @@ export default function ListMenu() {
             {/* Hospital */}
             <ListItem button selected={selectedIndex === 2} onClick={event => handleClickHos(event, 2)}  >
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa fa-stethoscope"></i>
                 </ListItemIcon>
                 <ListItemText primary="Hospital" />
                 {openHOS ? <ExpandMore /> : <ExpandLess />}
@@ -159,9 +162,9 @@ export default function ListMenu() {
             <Collapse in={!openHOS} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -175,7 +178,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -183,7 +186,7 @@ export default function ListMenu() {
             {/* Clinics */}
             <ListItem button selected={selectedIndex === 3} onClick={event => handleClickCli(event, 3)} >
                 <ListItemIcon>
-                    <InboxIcon />
+                <i className="fa fa-plus-square" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Clinics" />
                 {openCli ? <ExpandMore /> : <ExpandLess />}
@@ -191,9 +194,9 @@ export default function ListMenu() {
             <Collapse in={!openCli} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link" >Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link" >Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -207,7 +210,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -215,7 +218,7 @@ export default function ListMenu() {
             {/* Labs */}
             <ListItem button  selected={selectedIndex === 4} onClick={event => handleClickLab(event, 4)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa fa-heartbeat"></i>
                 </ListItemIcon>
                 <ListItemText primary="Labs" />
                 {openLab ? <ExpandMore /> : <ExpandLess />}
@@ -223,9 +226,9 @@ export default function ListMenu() {
             <Collapse in={!openLab} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -239,7 +242,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -247,7 +250,7 @@ export default function ListMenu() {
             {/* Pharmacy */}
             <ListItem button  selected={selectedIndex === 5} onClick={event => handleClickPha(event, 5)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                <i className="fa fa-hospital-o" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Pharmacy" />
                 {openPha ? <ExpandMore /> : <ExpandLess />}
@@ -255,9 +258,9 @@ export default function ListMenu() {
             <Collapse in={!openPha} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -271,7 +274,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -279,7 +282,7 @@ export default function ListMenu() {
             {/* Blood Bank */}
             <ListItem button  selected={selectedIndex === 6} onClick={event => handleClickBan(event, 6)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa  fa-heart" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Blood Bank" />
                 {openBan ? <ExpandMore /> : <ExpandLess />}
@@ -287,9 +290,9 @@ export default function ListMenu() {
             <Collapse in={!openBan} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -303,7 +306,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -311,7 +314,7 @@ export default function ListMenu() {
             {/* Fitness Centre */}
             <ListItem button  selected={selectedIndex === 7} onClick={event => handleClickFit(event, 7)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa  fa-bicycle" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Fitness Centre" />
                 {openFit ? <ExpandMore /> : <ExpandLess />}
@@ -319,9 +322,9 @@ export default function ListMenu() {
             <Collapse in={!openFit} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -335,7 +338,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -343,7 +346,7 @@ export default function ListMenu() {
             {/* Centre of Excellence */}
             <ListItem button  selected={selectedIndex === 8} onClick={event => handleClickCen(event, 8)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa  fa-dot-circle-o" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Centre of Excellence" />
                 {openCen ? <ExpandMore /> : <ExpandLess />}
@@ -351,9 +354,9 @@ export default function ListMenu() {
             <Collapse in={!openCen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -367,7 +370,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -375,7 +378,7 @@ export default function ListMenu() {
             {/* Ambulance */}
             <ListItem button  selected={selectedIndex === 9} onClick={event => handleClickAmb(event, 9)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa  fa-ambulance" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Ambulance" />
                 {openAmb ? <ExpandMore /> : <ExpandLess />}
@@ -383,9 +386,9 @@ export default function ListMenu() {
             <Collapse in={!openAmb} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -399,7 +402,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -407,7 +410,7 @@ export default function ListMenu() {
             {/* Organ Swap */}
             <ListItem button  selected={selectedIndex === 10} onClick={event => handleClickOrg(event, 10)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa  fa-handshake-o" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Organ Swap" />
                 {openOrg ? <ExpandMore /> : <ExpandLess />}
@@ -415,9 +418,9 @@ export default function ListMenu() {
             <Collapse in={!openOrg} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -431,7 +434,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -439,7 +442,7 @@ export default function ListMenu() {
             {/* Hotels */}
             <ListItem button  selected={selectedIndex === 11} onClick={event => handleClickHot(event, 11)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa  fa-bed" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Hotels" />
                 {openHot ? <ExpandMore /> : <ExpandLess />}
@@ -447,9 +450,9 @@ export default function ListMenu() {
             <Collapse in={!openHot} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -463,7 +466,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -471,7 +474,7 @@ export default function ListMenu() {
             {/* Transport */}
             <ListItem button  selected={selectedIndex === 12} onClick={event => handleClickTrans(event, 12)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa  fa-taxi" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Transport" />
                 {openTrans ? <ExpandMore /> : <ExpandLess />}
@@ -479,9 +482,9 @@ export default function ListMenu() {
             <Collapse in={!openTrans} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
-                                <Link to={'/'} className="nav-link">Personal Details</Link>
+                                <Link to={'/Personal'} className="nav-link">Personal Details</Link>
                             </li>
                             <li>
                                 <Link to={'/ProfessionalDetails'} className="nav-link">Professional details</Link>
@@ -495,7 +498,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>
@@ -503,15 +506,15 @@ export default function ListMenu() {
             {/* Master */}
             <ListItem button  selected={selectedIndex === 13} onClick={event => handleClickMaster(event, 13)}>
                 <ListItemIcon>
-                    <InboxIcon />
+                    <i className="fa  fa-user-md" aria-hidden="true"></i>
                 </ListItemIcon>
                 <ListItemText primary="Master" />
-                {openMaster ? <ExpandMore /> : <ExpandLess />}
-            </ListItem>
+                    {openMaster ? <ExpandMore /> : <ExpandLess />}
+                </ListItem>
             <Collapse in={!openMaster} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button className={classes.nested}>
-                        <ul>
+                        {/* <ul>
                             <li>
                                 <Link to={'/'} className="nav-link">Personal Details</Link>
                             </li>
@@ -527,7 +530,7 @@ export default function ListMenu() {
                             <li>
                                 <Link to={'/Procedures'} className="nav-link">Procedures</Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </ListItem>
                 </List>
             </Collapse>

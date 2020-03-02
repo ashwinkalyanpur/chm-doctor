@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 
 import Header from '../src/Header/Header';
+import SearchDoctor from '../src/component/Doctor/SearchDoctor/SearchDoctor';
 import Personal from '../src/component/Doctor/Personal/Personal';
 import Hospitals from '../src/component/Hospitals/Hospitals';
 import Clinics from '../src/component/Clinics/Clinics';
@@ -39,7 +40,8 @@ class App extends Component {
         </div>
         <div className="right">
           <Switch>
-            <Route exact path='/' component={Personal} />
+            <Route exact path='/' component={SearchDoctor} />
+            <Route path='/Personal' component={Personal} />
             <Route path='/ProfessionalDetails' component={ProfessionalDetails} />
             <Route path='/Clinic' component={Clinic} />
             <Route path='/Hospital' component={Hospital} />

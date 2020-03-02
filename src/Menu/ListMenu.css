@@ -12,7 +12,7 @@
 /* .MuiCollapse-entered .makeStyles-currentClass-3 */
 /* .MuiCollapse-entered ~ .MuiListItem-button */
 /* .MuiListItem-button:has(+ .MuiListItem-button) */
-.MuiListItem-root.Mui-selected
+nav .MuiListItem-root.Mui-selected
  {
     border-left: 3px solid #fa0000 !important;
 }

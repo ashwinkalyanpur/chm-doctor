@@ -1,3 +1,9 @@
 .tempAddress{
     display:none
 }
+.MuiFormControlLabel-root{
+    float: left;
+}
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+    text-align: left !important;
+}

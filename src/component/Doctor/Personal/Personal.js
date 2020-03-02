@@ -8,11 +8,18 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Grid from '@material-ui/core/Grid';
+import SearchByDoctor from '../SearchDoctor/SearchByDoctor';
+import Link from '@material-ui/core/Link';
 
 import Address from './Address';
 import Personalinfo from './PersonalInfo';
 import FamilyDetails from './FamilyDetails';
 
+function handleClick(event) {
+  event.preventDefault();
+}
 const useStyles = makeStyles(theme => ({
   buttons: {
     display: 'flex',
@@ -52,12 +59,32 @@ export default function Personal() {
   }
   return (
     <React.Fragment>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={12}>
+            <Breadcrumbs aria-label="breadcrumb">
+                <Link
+                    color="inherit"
+                >
+                    Home
+                </Link>
+                <Link
+                    color="inherit"
+                    href={'/'}
+                >
+                    Doctor
+                </Link>
+                <Link color="textPrimary" aria-current="page" href="/Personal" onClick={handleClick}>
+                    Personal Details
+                </Link>
+        </Breadcrumbs>
+        </Grid>
+        <Grid item xs={12} sm={12}>
+            <SearchByDoctor />
+        </Grid>
+    </Grid>
       <CssBaseline />
       <main className={classes.layout}>
         <Paper className={classes.paper}>
-          <Typography component="h1" variant="h4" align="center">
-            Personal Information
-          </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map(label => (
               <Step key={label}>

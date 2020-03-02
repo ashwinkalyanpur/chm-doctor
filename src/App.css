@@ -91,6 +91,9 @@ body{
 .MuiSvgIcon-root{
   margin-right: 15px !important;
 }
-.MuiListItemIcon-root .MuiSvgIcon-root{
+.MuiListItemIcon-root .MuiSvgIcon-root, button .MuiSvgIcon-root{
   margin-right: 0 !important;
+}
+.btnTopSpacing{
+  margin-top: 45px;
 }

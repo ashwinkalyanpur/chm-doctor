@@ -23,7 +23,7 @@ export default function Personalinfo() {
     
     return (
         <React.Fragment>
-            <Typography variant="h6" gutterBottom>
+            <Typography component="h1" variant="h4" align="center">
                 Personal Details
             </Typography>
             <Grid container spacing={3}>

@@ -1,5 +1,4 @@
 import React from "react";
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
@@ -10,10 +9,17 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Grid from '@material-ui/core/Grid';
+import SearchByDoctor from '../SearchDoctor/SearchByDoctor';
+import Link from '@material-ui/core/Link';
 
 import './Hospital.css';
 
+
+function handleClick(event) {
+    event.preventDefault();
+  }
 
 const styles = theme => ({
     formControl: {
@@ -48,6 +54,29 @@ class Hospital extends React.Component {
         return (
             <form className={classes.root} autoComplete="off">
                 <React.Fragment>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sm={12}>
+                        <Breadcrumbs aria-label="breadcrumb">
+                            <Link
+                                color="inherit"
+                            >
+                                Home
+                            </Link>
+                            <Link
+                                color="inherit"
+                                href={'/'}
+                            >
+                                Doctor
+                            </Link>
+                            <Link color="textPrimary" aria-current="page" href="/Hospital" onClick={handleClick}>
+                                Hospital
+                            </Link>
+                    </Breadcrumbs>
+                    </Grid>
+                    <Grid item xs={12} sm={12}>
+                        <SearchByDoctor />
+                    </Grid>
+                </Grid>
                 <Typography component="h1" variant="h4" align="center">
                         Hospital Details
                     </Typography>

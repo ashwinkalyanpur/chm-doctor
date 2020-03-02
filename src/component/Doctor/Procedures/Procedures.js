@@ -6,6 +6,15 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Medical from './Medical/Medical';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Grid from '@material-ui/core/Grid';
+import SearchByDoctor from '../SearchDoctor/SearchByDoctor';
+import Link from '@material-ui/core/Link';
+
+
+function handleClick(event) {
+    event.preventDefault();
+  }
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,6 +41,29 @@ export default function Procedures() {
 
   return (
     <div className={classes.root}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12}>
+              <Breadcrumbs aria-label="breadcrumb">
+                <Link
+                    color="inherit"
+                >
+                    Home
+                </Link>
+                <Link
+                    color="inherit"
+                    href={'/'}
+                >
+                    Doctor
+                </Link>
+                <Link color="textPrimary" aria-current="page" href="/Procedures" onClick={handleClick}>
+                    Procedures
+                </Link>
+          </Breadcrumbs>
+          </Grid>
+          <Grid item xs={12} sm={12}>
+              <SearchByDoctor />
+          </Grid>
+      </Grid>
       <Typography component="h1" variant="h4" align="center">
           Procedure Details
       </Typography>

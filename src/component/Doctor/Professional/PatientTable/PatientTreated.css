@@ -4,3 +4,9 @@
 .MuiTypography-h6{
     display: none ;
 }
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.MuiGrid-grid-sm-12.top-spacing{
+    float: right !important;
+}
+.modal-backdrop.show {
+    opacity: 0.5 !important;
+}
