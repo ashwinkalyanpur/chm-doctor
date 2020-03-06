@@ -31,8 +31,7 @@ export default function Social() {
 
     return (
         <React.Fragment>
-            <Grid container spacing={3}>
-                <Grid item xs={12} sm={12}>
+            <Grid container spacing={3} className="border-top">
                     <Breadcrumbs aria-label="breadcrumb">
                         <Link
                             color="inherit"
@@ -49,9 +48,8 @@ export default function Social() {
                             Social
                         </Link>
                 </Breadcrumbs>
-                </Grid>
             </Grid>
-            <Typography component="h1" variant="h4" align="center">
+            <Typography component="h5" variant="h5" align="left">
                 Social Media
             </Typography>
             <Grid container spacing={3}>

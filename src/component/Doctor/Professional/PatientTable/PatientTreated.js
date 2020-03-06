@@ -263,11 +263,13 @@ export default function PatientTreated() {
         ))}
       </TableBody>
       <TableFooter>
+        <TableRow>
         <TableCell colSpan="5">
       <Grid className="top-spacing" item xs={12} sm={12}>
         <Pagination count={10} color="primary" />
       </Grid>
       </TableCell>
+      </TableRow>
       </TableFooter>
     </Table>
 

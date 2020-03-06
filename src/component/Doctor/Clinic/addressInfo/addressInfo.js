@@ -70,7 +70,7 @@ class AddressInfo extends React.Component {
         return (
             <form className={classes.root} autoComplete="off">
                 <React.Fragment>
-                    <Typography component="h1" variant="h4" align="center">
+                    <Typography component="h5" variant="h5" align="left">
                         Clinic Details
                     </Typography>
                     <Grid container spacing={3}>

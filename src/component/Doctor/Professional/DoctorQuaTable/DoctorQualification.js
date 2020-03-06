@@ -29,26 +29,26 @@ function createData(qualification, specialization, university, achievements) {
 }
 
 const rows = [
-        createData( 'Sample 16', 'Apollo', 'Test University 1', 2001 ),
-        createData( 'Sample 17', 'Apollo 1', 'Test University 2', 2002 ),
-        createData( 'Sample 18', 'Apollo 2', 'Test University 3', 2003 ),
-        createData( 'Sample 19', 'Apollo 3', 'Test University 4', 2004 ),
-        createData( 'Sample 20', 'Apollo 4', 'Test University 5', 2005 ),
-        createData( 'Sample 1', 'Apollo 5', 'Test University 6', 2006 ),
-        createData( 'Sample 2', 'Manipal Hospital 1', 'Test University 7', 2007 ),
-        createData( 'Sample 3', 'Manipal Hospital 2', 'Test University 8', 2008 ),
-        createData( 'Sample 4', 'Manipal Hospital 3', 'Test University 9', 2009 ),
-        createData( 'Sample 5', 'Manipal Hospital 4', 'Test University 10', 2010 ),
-        createData( 'Sample 6', 'Manipal Hospital 5', 'Test University 11', 2011 ),
-        createData( 'Sample 7', 'Fortis Hospital 1', 'Test University 5', 2012 ),
-        createData( 'Sample 8', 'Fortis Hospital 2', 'Test University 12', 2013 ),
-        createData( 'Sample 9', 'Fortis Hospital 3', 'Test University 5', 2014 ),
-        createData( 'Sample 10', 'Fortis Hospital 4', 'Test University 13', 2015 ),
-        createData( 'Sample 11', 'Fortis Hospital 5', 'Test University 14', 2016 ),
-        createData( 'Sample 12', 'Columbia Hospital 1', 'Test University 15', 2017 ),
-        createData( 'Sample 13', 'Columbia Hospital 2', 'Test University 16', 2018 ),
-        createData( 'Sample 14', 'Columbia Hospital 3', 'Test University 17', 2019 ),
-        createData( 'Sample 15', 'Columbia Hospital 4', 'Test University 18', 2020 ),
+  createData('Sample 16', 'Apollo', 'Test University 1', 2001),
+  createData('Sample 17', 'Apollo 1', 'Test University 2', 2002),
+  createData('Sample 18', 'Apollo 2', 'Test University 3', 2003),
+  createData('Sample 19', 'Apollo 3', 'Test University 4', 2004),
+  createData('Sample 20', 'Apollo 4', 'Test University 5', 2005),
+  createData('Sample 1', 'Apollo 5', 'Test University 6', 2006),
+  createData('Sample 2', 'Manipal Hospital 1', 'Test University 7', 2007),
+  createData('Sample 3', 'Manipal Hospital 2', 'Test University 8', 2008),
+  createData('Sample 4', 'Manipal Hospital 3', 'Test University 9', 2009),
+  createData('Sample 5', 'Manipal Hospital 4', 'Test University 10', 2010),
+  createData('Sample 6', 'Manipal Hospital 5', 'Test University 11', 2011),
+  createData('Sample 7', 'Fortis Hospital 1', 'Test University 5', 2012),
+  createData('Sample 8', 'Fortis Hospital 2', 'Test University 12', 2013),
+  createData('Sample 9', 'Fortis Hospital 3', 'Test University 5', 2014),
+  createData('Sample 10', 'Fortis Hospital 4', 'Test University 13', 2015),
+  createData('Sample 11', 'Fortis Hospital 5', 'Test University 14', 2016),
+  createData('Sample 12', 'Columbia Hospital 1', 'Test University 15', 2017),
+  createData('Sample 13', 'Columbia Hospital 2', 'Test University 16', 2018),
+  createData('Sample 14', 'Columbia Hospital 3', 'Test University 17', 2019),
+  createData('Sample 15', 'Columbia Hospital 4', 'Test University 18', 2020),
 
 ];
 
@@ -94,7 +94,7 @@ export default function DoctorQualification() {
   const handleCloseDeleteTable = () => setShowDeleteTable(false);
 
   const [showDeleteTable, setShowDeleteTable] = useState(false);
-  
+
   const [state, setState] = React.useState({
     checkedB: true,
   });
@@ -130,7 +130,7 @@ export default function DoctorQualification() {
               <IconButton edge="end" aria-label="delete">
                 <DeleteIcon onClick={() => setShowDeleteTable(true)} />
               </IconButton>
-             {/* Edit Doctor Popup */}
+              {/* Edit Doctor Popup */}
               <Modal
                 size="lg"
                 show={showDetailsTable}
@@ -146,7 +146,7 @@ export default function DoctorQualification() {
                   <Grid container spacing={3}>
                     <Grid item xs={6} sm={4}>
                       <InputLabel htmlFor="qualification">
-                      Qualification Name
+                        Qualification Name
                       </InputLabel>
                       <FormControl className={classes.formControl}>
                         <TextField
@@ -159,7 +159,7 @@ export default function DoctorQualification() {
                       </FormControl>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="specialization">
+                      <InputLabel htmlFor="specialization">
                         Specialization
                       </InputLabel>
                       <FormControl className={classes.formControl}>
@@ -173,7 +173,7 @@ export default function DoctorQualification() {
                       </FormControl>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="university">
+                      <InputLabel htmlFor="university">
                         University
                       </InputLabel>
                       <FormControl className={classes.formControl}>
@@ -187,7 +187,7 @@ export default function DoctorQualification() {
                       </FormControl>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="achievements">
+                      <InputLabel htmlFor="achievements">
                         Achievement Year
                       </InputLabel>
                       <FormControl className={classes.formControl}>
@@ -209,7 +209,7 @@ export default function DoctorQualification() {
                         </Button>
                     </Grid>
                   </Grid>
-                  
+
                 </Modal.Body>
               </Modal>
               {/* End Edit Doctor Popup */}
@@ -229,22 +229,22 @@ export default function DoctorQualification() {
                   <Grid container spacing={3}>
                     <Grid item xs={6} sm={3}>
                       <InputLabel htmlFor="qualification">
-                      {row.qualification}
+                        {row.qualification}
                       </InputLabel>
                     </Grid>
                     <Grid item xs={6} sm={4}>
-                    <InputLabel htmlFor="specialization">
-                      {row.specialization}
+                      <InputLabel htmlFor="specialization">
+                        {row.specialization}
                       </InputLabel>
                     </Grid>
                     <Grid item xs={6} sm={2}>
-                    <InputLabel htmlFor="university">
-                      {row.university}
+                      <InputLabel htmlFor="university">
+                        {row.university}
                       </InputLabel>
                     </Grid>
                     <Grid item xs={6} sm={3}>
-                    <InputLabel htmlFor="achievements">
-                      {row.achievements}
+                      <InputLabel htmlFor="achievements">
+                        {row.achievements}
                       </InputLabel>
                     </Grid>
                   </Grid>
@@ -259,17 +259,19 @@ export default function DoctorQualification() {
                 </Modal.Footer>
               </Modal>
               {/* End Delete Doctor Popup */}
-             
+
             </TableCell>
           </TableRow>
         ))}
       </TableBody>
       <TableFooter>
-        <TableCell colSpan="5">
-      <Grid className="top-spacing" item xs={12} sm={12}>
-        <Pagination count={10} color="primary" />
-      </Grid>
-      </TableCell>
+        <TableRow>
+          <TableCell colSpan="5">
+            <Grid className="top-spacing" item xs={12} sm={12}>
+              <Pagination count={10} color="primary" />
+            </Grid>
+          </TableCell>
+        </TableRow>
       </TableFooter>
     </Table>
 

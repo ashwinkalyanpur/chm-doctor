@@ -13,8 +13,7 @@ class Clinic extends Component{
     render() {
         return (
             <React.Fragment>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} sm={12}>
+                <Grid container spacing={3} className="border-top">
                         <Breadcrumbs aria-label="breadcrumb">
                             <Link
                                 color="inherit"
@@ -31,8 +30,7 @@ class Clinic extends Component{
                                 Clinic
                             </Link>
                     </Breadcrumbs>
-                    </Grid>
-                    <Grid item xs={12} sm={12}>
+                    <Grid item xs={9} sm={9}>
                         <SearchByDoctor />
                     </Grid>
                 </Grid>

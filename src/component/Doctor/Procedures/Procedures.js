@@ -41,8 +41,7 @@ export default function Procedures() {
 
   return (
     <div className={classes.root}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={12}>
+        <Grid container spacing={3} className="border-top">
               <Breadcrumbs aria-label="breadcrumb">
                 <Link
                     color="inherit"
@@ -59,12 +58,11 @@ export default function Procedures() {
                     Procedures
                 </Link>
           </Breadcrumbs>
-          </Grid>
-          <Grid item xs={12} sm={12}>
+          <Grid item xs={9} sm={9}>
               <SearchByDoctor />
           </Grid>
       </Grid>
-      <Typography component="h1" variant="h4" align="center">
+      <Typography component="h5" variant="h5" align="center">
           Procedure Details
       </Typography>
       <ExpansionPanel expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>

@@ -31,15 +31,14 @@ class SearchDoctor extends React.Component {
         return (
             
             <form className={classes.root} autoComplete="on">
-                <Breadcrumbs aria-label="breadcrumb">
-                    <Typography color="textPrimary">Home</Typography>
-                </Breadcrumbs>
+                
                 <React.Fragment>
-                    <Typography component="h1" variant="h4" align="center">
-                        Search Doctor
-                    </Typography>
+                    
                     <Grid container spacing={3}>
-                        <Grid item xs={12} sm={11}>
+                        <Breadcrumbs aria-label="breadcrumb">
+                            <Typography color="textPrimary">Home</Typography>
+                        </Breadcrumbs>
+                        <Grid item xs={10} sm={10}>
                             <SearchByDoctor />
                         </Grid>
                         <Grid item xs={12} sm={1}>
@@ -49,6 +48,9 @@ class SearchDoctor extends React.Component {
                                 </Grid>
                             </Grid>
                         </Grid>
+                        <Typography component="h5" variant="h5" align="left">
+                            Search Doctor
+                        </Typography>
                         <Grid item xs={12} sm={12}>
                             <DetailsTable />
                         </Grid>

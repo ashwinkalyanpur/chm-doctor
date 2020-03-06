@@ -54,8 +54,7 @@ class Hospital extends React.Component {
         return (
             <form className={classes.root} autoComplete="off">
                 <React.Fragment>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} sm={12}>
+                <Grid container spacing={3} className="border-top">
                         <Breadcrumbs aria-label="breadcrumb">
                             <Link
                                 color="inherit"
@@ -72,12 +71,11 @@ class Hospital extends React.Component {
                                 Hospital
                             </Link>
                     </Breadcrumbs>
-                    </Grid>
-                    <Grid item xs={12} sm={12}>
+                    <Grid item xs={9} sm={9}>
                         <SearchByDoctor />
                     </Grid>
                 </Grid>
-                <Typography component="h1" variant="h4" align="center">
+                <Typography component="h5" variant="h5" align="left">
                         Hospital Details
                     </Typography>
                     <Grid container spacing={3}>

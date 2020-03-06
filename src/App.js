@@ -21,7 +21,10 @@ import './App.css';
 
 class App extends Component {
 
-
+  state = {
+    isSwitchOn: false,
+  }
+  
   render() {
 
     return (
@@ -30,15 +33,23 @@ class App extends Component {
         <div>
           <Header />
         </div>
-        <div className="leftMenu">
+        <div className={ this.state.isSwitchOn ? "leftMenu leftMenuItem" : "leftMenu rightMenuItem"}>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav mr-auto">
-              {/* <li><Link to={'/'} className="nav-link"></Link></li> */}
+              <li>
+                <button 
+              className={ this.state.isSwitchOn ? "square window-close" : "square windows-bars"}
+              onClick={ () => this.setState({isSwitchOn: !this.state.isSwitchOn})}>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
+                </li>
               <li><ListMenu /></li>
             </ul>
           </nav>
         </div>
-        <div className="right">
+        <div className={ this.state.isSwitchOn ? "right leftContainer" : "right rightContainer"}>
           <Switch>
             <Route exact path='/' component={SearchDoctor} />
             <Route path='/Personal' component={Personal} />
